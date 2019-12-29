@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	.wrap{
+		width: 500px;
+		margin: 100px auto 0;
+	}
+	h2{
+		position: relative;
+		height: 50px;
+		line-height: 50px;
+		display: inline-block;
+		padding: 0 10px;
+		transition: .2s;
+	}
+	h2 span{
+		position: absolute;
+		width: 0;
+		height: 3px;
+		background: blue;
+		bottom: 0;
+		left: 50%;
+		transition: all .2s;
+	
+	}
+	input{
+		display: block;
+	}
+	h2.active{
+		color: blue;
+	}
+	h2.active span{
+		width: 100%;
+		left: 0;
+	}
+</style>
+<body>
+<div class="wrap">
+	<h2>前端学院 <span></span></h2>
+	<input type="button" value="点击按钮">
+</div>
+<script type="text/javascript">
+    var input=document.querySelector('input');
+    var oH2=document.querySelector('h2');
+	input.onclick=function(){
+		if(oH2.className==''){
+			oH2.className='active';
+		}else{
+			oH2.className='';
+		}
+	}
+</script>
+</body>
+</html>
